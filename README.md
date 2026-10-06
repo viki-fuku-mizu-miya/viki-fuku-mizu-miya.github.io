@@ -1,3 +1,7 @@
+### 公開先:
+
+https://viki-fuku-mizu-miya.github.io/
+
 # Astro Starter Kit: Blog
 
 ```sh
