@@ -4,55 +4,90 @@ import HeaderLink from "./HeaderLink.astro";
 ---
 
 <header>
-    <nav>
-        <h2>
-            <a href="/">{SITE_TITLE}</a>
-        </h2>
+    <nav aria-label="メインナビゲーション">
+        <a class="brand" href="/" aria-label={`${SITE_TITLE} トップページ`}>
+            <span class="brand-mark" aria-hidden="true"
+                ><i></i><i></i><i></i></span
+            >
+            <span>{SITE_TITLE}</span>
+        </a>
         <div class="internal-links">
-            <HeaderLink href="/">Home</HeaderLink>
-            <HeaderLink href="/blog">Blog</HeaderLink>
-            <HeaderLink href="/about">About</HeaderLink>
+            <HeaderLink href="/">トップ</HeaderLink>
+            <HeaderLink href="/faq/">よくある質問</HeaderLink>
         </div>
     </nav>
 </header>
+
 <style>
     header {
-        margin: 0;
-        padding: 0 1em;
-        background: white;
-        box-shadow: 0 2px 8px rgba(var(--black), 5%);
-    }
-    h2 {
-        margin: 0;
-        font-size: 1em;
-    }
-
-    h2 a,
-    h2 a.active {
-        text-decoration: none;
+        position: sticky;
+        z-index: 10;
+        top: 0;
+        border-bottom: 1px solid var(--line);
+        background: rgba(247, 246, 241, 0.92);
+        backdrop-filter: blur(12px);
     }
     nav {
+        max-width: 1180px;
+        height: 74px;
+        margin: 0 auto;
+        padding: 0 24px;
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
-    nav a {
-        padding: 1em 0.5em;
-        color: var(--black);
-        border-bottom: 4px solid transparent;
-        text-decoration: none;
-    }
-    nav a.active {
-        text-decoration: none;
-        border-bottom-color: var(--accent);
-    }
-    .social-links,
-    .social-links a {
+    .brand {
         display: flex;
+        gap: 0.8rem;
+        align-items: center;
+        color: var(--ink);
+        font-size: 0.86rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-decoration: none;
     }
-    @media (max-width: 720px) {
-        .social-links {
-            display: none;
+    .brand-mark {
+        position: relative;
+        width: 30px;
+        height: 24px;
+        display: block;
+    }
+    .brand-mark i {
+        position: absolute;
+        width: 13px;
+        aspect-ratio: 1;
+        border: 1.5px solid var(--teal);
+        border-radius: 50%;
+    }
+    .brand-mark i:nth-child(1) {
+        left: 0;
+        top: 5px;
+    }
+    .brand-mark i:nth-child(2) {
+        left: 9px;
+        top: 0;
+    }
+    .brand-mark i:nth-child(3) {
+        left: 16px;
+        top: 9px;
+        background: var(--coral);
+        border-color: var(--coral);
+    }
+    .internal-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+    @media (max-width: 520px) {
+        nav {
+            height: 64px;
+            padding: 0 16px;
+        }
+        .brand {
+            font-size: 0.72rem;
+        }
+        .internal-links {
+            gap: 1rem;
         }
     }
 </style>

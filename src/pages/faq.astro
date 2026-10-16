@@ -1,0 +1,65 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+---
+
+<!doctype html>
+<html lang="ja">
+	<head>
+		<BaseHead title="よくある質問 | ○○研究室" description="○○研究室の活動、見学、配属についてのよくある質問です。" />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<header class="page-head">
+				<p>FAQ</p>
+				<h1>よくある質問</h1>
+				<span>研究室の活動や見学について、よく寄せられる質問をまとめています。</span>
+			</header>
+
+			<section aria-label="質問と回答">
+				<details open>
+					<summary><span>01</span>研究室では、どのような研究をしていますか？</summary>
+					<p>ここには研究室全体の研究領域と、具体的なアプローチを記載します。メンバーごとのテーマはトップページのカードから確認できます。</p>
+				</details>
+				<details>
+					<summary><span>02</span>研究室を見学することはできますか？</summary>
+					<p>見学方法、対応可能な時期、申し込み先などを記載します。オンラインでの説明に対応する場合は、その旨も案内できます。</p>
+				</details>
+				<details>
+					<summary><span>03</span>配属を希望する場合、何を準備すればよいですか？</summary>
+					<p>事前に読んでほしい資料、必要な基礎知識、面談までの流れなどを記載します。正式な募集要項へのリンクもここに追加できます。</p>
+				</details>
+				<details>
+					<summary><span>04</span>研究テーマはどのように決めますか？</summary>
+					<p>本人の関心と研究室の専門性をもとに、教員やメンバーとの対話を重ねて決定する、など実際の方針に合わせて書き換えてください。</p>
+				</details>
+				<details>
+					<summary><span>05</span>研究室への連絡方法を教えてください。</summary>
+					<p>代表者のメールアドレスや大学公式ページへのリンクなど、公開可能な連絡先を記載します。</p>
+				</details>
+			</section>
+			<a class="back" href="/">← トップページへ戻る</a>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main { max-width: 900px; padding: 6rem 0 8rem; }
+	.page-head { margin-bottom: 5rem; }
+	.page-head > p { color: var(--teal); font-size: .7rem; font-weight: 700; letter-spacing: .2em; }
+	h1 { margin: .75rem 0 1rem; font-size: clamp(3rem, 8vw, 5.5rem); letter-spacing: -.06em; }
+	.page-head span { color: var(--muted); font-size: .95rem; }
+	details { border-top: 1px solid var(--line); }
+	details:last-child { border-bottom: 1px solid var(--line); }
+	summary { position: relative; padding: 2rem 3rem 2rem 0; cursor: pointer; list-style: none; font-size: 1.1rem; font-weight: 700; }
+	summary::-webkit-details-marker { display: none; }
+	summary span { display: inline-block; width: 3rem; color: var(--coral); font: italic .75rem Georgia, serif; }
+	summary::after { position: absolute; right: .5rem; content: '+'; color: var(--teal); font-size: 1.5rem; font-weight: 400; }
+	details[open] summary::after { content: '−'; }
+	details p { max-width: 700px; margin: 0 0 2rem 3rem; color: var(--muted); font-size: .92rem; line-height: 2; }
+	.back { display: inline-block; margin-top: 4rem; color: var(--ink); font-size: .8rem; font-weight: 700; text-decoration: none; }
+	@media (max-width: 600px) { main { padding: 4rem 0 6rem; } .page-head { margin-bottom: 3rem; } summary { padding-block: 1.5rem; font-size: .95rem; } summary span { width: 2rem; } details p { margin-left: 2rem; } }
+</style>

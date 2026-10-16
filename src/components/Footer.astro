@@ -1,28 +1,43 @@
 ---
+import { SITE_TITLE } from "../consts";
 const today = new Date();
 ---
 
 <footer>
-    &copy; {today.getFullYear()} Your name here. All rights reserved.
+    <div>
+        <a href="/">{SITE_TITLE}</a>
+    </div>
+    <p class="copyright">&copy; {today.getFullYear()} {SITE_TITLE}</p>
 </footer>
+
 <style>
     footer {
-        padding: 2em 1em 6em 1em;
-        background: linear-gradient(var(--gray-gradient)) no-repeat;
-        color: rgb(var(--gray));
-        text-align: center;
-    }
-    .social-links {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 3rem 24px 4rem;
         display: flex;
-        justify-content: center;
-        gap: 1em;
-        margin-top: 1em;
+        justify-content: space-between;
+        align-items: end;
+        border-top: 1px solid var(--line);
     }
-    .social-links a {
+    footer a {
+        color: var(--ink);
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
         text-decoration: none;
-        color: rgb(var(--gray));
     }
-    .social-links a:hover {
-        color: rgb(var(--gray-dark));
+    footer p {
+        margin: 0.5rem 0 0;
+        color: var(--muted);
+        font-size: 0.72rem;
+    }
+    @media (max-width: 600px) {
+        footer {
+            align-items: start;
+            flex-direction: column;
+            gap: 2rem;
+            padding-inline: 16px;
+        }
     }
 </style>

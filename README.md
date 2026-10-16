@@ -2,22 +2,21 @@
 
 https://viki-fuku-mizu-miya.github.io/
 
-# Astro Starter Kit: Blog
+# 研究室ウェブサイト
 
 ```sh
 npm create astro@latest -- --template blog
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Astroで構築した、研究室と所属メンバーの研究を紹介するウェブサイトです。
 
-Features:
+## ページ構成
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and Open Graph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+- `/` — 研究室紹介とメンバーカード
+- `/faq/` — よくある質問
+- `/members/[slug]/` — メンバーごとの研究紹介
+
+メンバーの追加・編集は `src/content/members/` 内のMarkdownファイルで行います。
 
 ## 🚀 Project Structure
 
