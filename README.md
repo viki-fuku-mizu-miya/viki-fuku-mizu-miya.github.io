@@ -1,66 +1,58 @@
-### 公開先:
-
-https://viki-fuku-mizu-miya.github.io/
-
 # 研究室ウェブサイト
 
+研究室と所属メンバーの研究を紹介するウェブサイトです。
+
+公開サイト: https://viki-fuku-mizu-miya.github.io/
+
+## 初めて開発するとき
+
+事前に次のソフトをインストールしてください。
+
+- Git
+- Node.js 22.12.0以上
+
+ターミナルを開き、次のコマンドを上から1行ずつ実行します。
+
 ```sh
-npm create astro@latest -- --template blog
+git clone https://github.com/viki-fuku-mizu-miya/viki-fuku-mizu-miya.github.io.git
+cd viki-fuku-mizu-miya.github.io
+git switch dev
+npm ci
+npm run dev
 ```
 
-Astroで構築した、研究室と所属メンバーの研究を紹介するウェブサイトです。
+表示されたURL（通常は http://localhost:4321/ ）をブラウザで開くと、ウェブサイトを確認できます。
 
-## ページ構成
+開発サーバーを止めるときは、ターミナルで `Ctrl` キーを押しながら `C` キーを押します。
 
-- `/` — 研究室紹介とメンバーカード
-- `/faq/` — よくある質問
-- `/members/[slug]/` — メンバーごとの研究紹介
+> [!IMPORTANT]
+> パッケージのインストールには `npm install` ではなく `npm ci` を使ってください。`package-lock.json` が意図せず更新されることを防げます。
 
-メンバーの追加・編集は `src/content/members/` 内のMarkdownファイルで行います。
+## 2回目以降の開発
 
-## 🚀 Project Structure
+ターミナルでプロジェクトのフォルダを開き、次のコマンドを実行します。
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-├── public/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+```sh
+git switch dev
+git pull
+npm ci
+npm run dev
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## ブランチについて
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+普段の作業は `dev` ブランチで行います。
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+`main` ブランチに変更を反映すると、GitHub Actionsによって公開サイトが自動更新されます。確認前の変更を `main` ブランチへ直接反映しないでください。
 
-Any static assets, like images, can be placed in the `public/` directory.
+`dev` ブランチが見つからない場合やGitの操作が分からない場合は、管理者に確認してください。
 
-## 🧞 Commands
+## メンバー情報の編集
 
-All commands are run from the root of the project, from a terminal:
+メンバー情報は `src/content/members/` フォルダ内のMarkdownファイルにあります。
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+変更後は、次のコマンドでエラーがないことを確認してください。
 
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+```sh
+npm run build
+```
