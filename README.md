@@ -49,7 +49,21 @@ npm run dev
 
 ## メンバー情報の編集
 
-メンバー情報は `src/content/members/` フォルダ内のMarkdownファイルにあります。
+メンバー情報は `src/content/members/<メンバーID>/index.md` にあります。メンバーごとのフォルダに、Markdownと画像などの関連ファイルをまとめて配置します。
+
+```text
+src/content/members/
+├── member-a/
+│   └── index.md
+├── member-b/
+│   └── index.md
+└── member-c/
+    └── index.md
+```
+
+画像を追加する場合は、例えば `member-a/photo.jpg` に置き、同じフォルダの `index.md` から `![画像の説明](./photo.jpg)` と参照できます。
+
+メンバーを追加するときは、既存のメンバーフォルダをコピーし、フォルダ名と `index.md` の内容を変更してください。フォルダ名がメンバーIDとなり、ページのURLは `/members/<メンバーID>/` になります。`index.mdx` も使用できます。
 
 変更後は、次のコマンドでエラーがないことを確認してください。
 
