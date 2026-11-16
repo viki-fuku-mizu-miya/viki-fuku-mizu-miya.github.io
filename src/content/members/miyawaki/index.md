@@ -2,7 +2,7 @@
 name: "宮脇　遼雅"
 nameEn: "RYOGA MIYAWAKI"
 initials: "R.M"
-role: "修士課程 / MASTER'S STUDENT"
+role: "修士2年 / MASTER'S STUDENT"
 researchTheme: "ロボット漫才における自律性導入に関する研究"
 keywords: ["ロボット", "漫才", "自律性"]
 order: 3

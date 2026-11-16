@@ -1,7 +1,7 @@
 ---
 name: "中村 響"
 nameEn: "HIBIKI NAKAMURA"
-initials: "HN"
+initials: "H.N"
 role: "修士2年 / MASTER'S STUDENT"
 researchTheme: "レーザ測距センサーを用いた焼酎樽の液面計測"
 keywords: ["非接触計測", "音波測距", "傾斜補正"]
