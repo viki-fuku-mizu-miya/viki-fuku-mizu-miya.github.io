@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import fics_img from "../assets/fics.png";
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
@@ -20,31 +21,28 @@ const members = (await getCollection("members")).sort(
         <main>
             <section class="hero" aria-labelledby="hero-title">
                 <div class="hero-copy">
-                    <h1 class="eyebrow">鹿嶋・福元研究室</h1>
-                    <p class="lead">研究室の説明</p>
+                    <h1 id="hero-title" class="eyebrow">鹿嶋・福元研究室</h1>
+                    <div class="hero-content">
+                        <img
+                            class="hero-photo"
+                            src={fics_img.src}
+                            alt="鹿嶋・福元研究室の集合写真"
+                            width={fics_img.width}
+                            height={fics_img.height}
+                        />
+                        <div class="hero-description">
+                            <p class="lead">
+                                私達の研究グループでは、環境や人の状態を理解し、人とコンピュータやロボットが自然に関わり合える「親和的情報空間」の実現を目指しています。主な研究分野は、人物処理・ロボットビジョン・状況認識・スマート農業の4分野で、画像処理や人工知能などの技術を活用し、人の動作や周囲の環境を認識する技術から、農作業をより便利にする技術まで、幅広いテーマに挑戦しています。
+                            </p>
+                            <p class="lead">福元先生、鹿嶋先生に加え、オブザーバーの渡邉先生、技術職員の西さんの計4名の先生方に支えていただいています。</p>
+                            <p class="lead">それぞれ異なる分野で豊富な知見を持つ先生方のもと、約30名のメンバーとともに、日々刺激を受けながら楽しい研究ライフを送っています！</p>
+                        </div>
+                    </div>
                     <a class="hero-link" href="#members">
                         メンバーの研究を見る <span aria-hidden="true">↓</span>
                     </a>
                 </div>
-                <div class="hero-visual" aria-hidden="true">
-                    <div class="orbit orbit-one"></div>
-                    <div class="orbit orbit-two"></div>
-                    <div class="core">Q</div>
-                    <span class="node node-one"></span>
-                    <span class="node node-two"></span>
-                    <span class="node node-three"></span>
-                </div>
             </section>
-
-            <section class="intro" aria-labelledby="about-title">
-                <p class="section-number">01</p>
-                <div>
-                    <p class="eyebrow">ABOUT US</p>
-                    <h2 id="about-title">タイトル</h2>
-                </div>
-                <p>細かい説明</p>
-            </section>
-
             <section
                 class="members"
                 id="members"
@@ -109,10 +107,30 @@ const members = (await getCollection("members")).sort(
     .hero {
         min-height: 620px;
         display: grid;
-        grid-template-columns: 1.15fr 0.85fr;
+        grid-template-columns: 1fr;
         align-items: center;
         gap: 3rem;
         padding: 5rem 0 6rem;
+    }
+    .hero-content {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+        align-items: start;
+        gap: 2.5rem;
+        margin: 2.25rem 0 1.5rem;
+    }
+    .hero-description .lead:first-child {
+        margin-top: 0;
+    }
+    .hero-description .lead:last-child {
+        margin-bottom: 0;
+    }
+    .hero-photo {
+        display: block;
+        width: min(100%, 800px);
+        height: auto;
+        margin: 0;
+        border-radius: 20px;
     }
     .eyebrow {
         margin: 0 0 1.25rem;
@@ -132,8 +150,8 @@ const members = (await getCollection("members")).sort(
         color: var(--teal);
     }
     .lead {
-        max-width: 620px;
-        margin: 2.25rem 0;
+        max-width: 900px;
+        margin: 1rem 0;
         color: var(--muted);
         font-size: 1rem;
         line-height: 2;
@@ -349,6 +367,10 @@ const members = (await getCollection("members")).sort(
         margin-left: 1.5rem;
     }
     @media (max-width: 800px) {
+        .hero-content {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
         main {
             width: calc(100% - 32px);
         }
