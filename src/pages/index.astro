@@ -22,10 +22,9 @@ const members = (await getCollection("members")).sort(
                 <div class="hero-copy">
                     <h1 class="eyebrow">研究室名</h1>
                     <p class="lead">研究室の説明</p>
-                    <a class="hero-link" href="#members"
-                        >メンバーの研究を見る <span aria-hidden="true">↓</span
-                        ></a
-                    >
+                    <a class="hero-link" href="#members">
+                        メンバーの研究を見る <span aria-hidden="true">↓</span>
+                    </a>
                 </div>
                 <div class="hero-visual" aria-hidden="true">
                     <div class="orbit orbit-one"></div>
@@ -60,30 +59,26 @@ const members = (await getCollection("members")).sort(
                 </div>
 
                 <div class="member-grid">
-                    {
-                        members.map((member, index) => (
-                            <a
-                                class={`member-card card-${(index % 3) + 1}`}
-                                href={`/members/${member.id}/`}
-                            >
-                                <div class="portrait" aria-hidden="true">
-                                    <span>{member.data.initials}</span>
-                                    <i />
-                                </div>
-                                <div class="card-body">
-                                    <p class="role">{member.data.role}</p>
-                                    <h3>{member.data.name}</h3>
-                                    <p class="name-en">{member.data.nameEn}</p>
-                                    <p class="theme">
-                                        {member.data.researchTheme}
-                                    </p>
-                                    <span class="more">
-                                        研究を見る <b aria-hidden="true">↗</b>
-                                    </span>
-                                </div>
-                            </a>
-                        ))
-                    }
+                    {members.map((member, index) => (
+                        <a
+                            class={`member-card card-${(index % 3) + 1}`}
+                            href={`/members/${member.id}/`}
+                        >
+                            <div class="portrait" aria-hidden="true">
+                                <span>{member.data.initials}</span>
+                                <i />
+                            </div>
+                            <div class="card-body">
+                                <p class="role">{member.data.role}</p>
+                                <h3>{member.data.name}</h3>
+                                <p class="name-en">{member.data.nameEn}</p>
+                                <p class="theme">{member.data.researchTheme}</p>
+                                <span class="more">
+                                    研究を見る <b aria-hidden="true">↗</b>
+                                </span>
+                            </div>
+                        </a>
+                    ))}
                 </div>
             </section>
 
@@ -91,12 +86,14 @@ const members = (await getCollection("members")).sort(
                 <div>
                     <p class="eyebrow">FOR VISITORS</p>
                     <h2 id="question-title">
-                        研究室について<br />もう少し知りたい方へ
+                        研究室について
+                        <br />
+                        もう少し知りたい方へ
                     </h2>
                 </div>
-                <a href="/faq/"
-                    >よくある質問を見る <span aria-hidden="true">→</span></a
-                >
+                <a href="/faq/">
+                    よくある質問を見る <span aria-hidden="true">→</span>
+                </a>
             </section>
         </main>
         <Footer />

@@ -1,20 +1,48 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
+import type { HTMLAttributes } from "astro/types";
 
-type Props = HTMLAttributes<'a'>;
+type Props = HTMLAttributes<"a">;
 
-const { href = '/', class: className, ...props } = Astro.props;
+const { href = "/", class: className, ...props } = Astro.props;
 const pathname = Astro.url.pathname;
-const isActive = href === '/' ? pathname === '/' : pathname.startsWith(String(href));
+const isActive =
+    href === "/" ? pathname === "/" : pathname.startsWith(String(href));
 ---
 
-<a href={href} class:list={[className, { active: isActive }]} aria-current={isActive ? 'page' : undefined} {...props}>
-	<slot />
+<a
+    href={href}
+    class:list={[className, { active: isActive }]}
+    aria-current={isActive ? "page" : undefined}
+    {...props}
+>
+    <slot />
 </a>
 
 <style>
-	a { position: relative; padding: .5rem 0; color: var(--muted); font-size: .78rem; font-weight: 700; text-decoration: none; }
-	a::after { position: absolute; right: 0; bottom: 0; left: 0; height: 2px; content: ''; background: var(--coral); transform: scaleX(0); transition: transform .2s ease; }
-	a:hover, a.active { color: var(--ink); }
-	a.active::after { transform: scaleX(1); }
+    a {
+        position: relative;
+        padding: 0.5rem 0;
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-decoration: none;
+    }
+    a::after {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        content: "";
+        background: var(--coral);
+        transform: scaleX(0);
+        transition: transform 0.2s ease;
+    }
+    a:hover,
+    a.active {
+        color: var(--ink);
+    }
+    a.active::after {
+        transform: scaleX(1);
+    }
 </style>
