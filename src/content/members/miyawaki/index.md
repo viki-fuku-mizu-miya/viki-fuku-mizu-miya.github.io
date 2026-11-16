@@ -5,7 +5,7 @@ initials: "R.M"
 role: "修士課程 / MASTER'S STUDENT"
 researchTheme: "ロボット漫才における自律性導入に関する研究"
 keywords: ["ロボット", "漫才", "自律性"]
-order: 1
+order: 3
 ---
 
 ![ロボット漫才](./RobotManzai.JPG)
