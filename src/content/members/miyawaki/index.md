@@ -8,7 +8,7 @@ keywords: ["ロボット", "漫才", "自律性"]
 order: 1
 ---
 
-![ロボット漫才](./RobotManzai.jpg)
+![ロボット漫才](./RobotManzai.JPG)
 
 ## 研究について
 
