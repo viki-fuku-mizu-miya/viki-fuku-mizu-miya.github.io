@@ -1,5 +1,5 @@
 ---
-name: "福田　啓太"
+name: "福田 啓太"
 nameEn: "KEITA FUKUDA"
 initials: "K.F"
 role: "修士2年 / MASTER'S STUDENT"
