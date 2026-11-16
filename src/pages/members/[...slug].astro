@@ -165,6 +165,11 @@ const { Content } = await render(member);
         font-size: 0.95rem;
         line-height: 2;
     }
+    .prose :global(img) {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
 
     @media (max-width: 760px) {
         .profile-head,
