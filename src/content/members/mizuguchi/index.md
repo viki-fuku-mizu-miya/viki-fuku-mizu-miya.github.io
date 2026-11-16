@@ -1,7 +1,6 @@
 ---
 name: "水口 尚哉"
 nameEn: "NAOYA MIZUGUCHI"
-initials: "N.M"
 role: "修士2年 / MASTER’S STUDENT"
 researchTheme: "視覚特徴に基づくプロンプト生成による没入映像生成に関する研究"
 keywords: ["生成AI", "映像生成", "Spatial Presence"]

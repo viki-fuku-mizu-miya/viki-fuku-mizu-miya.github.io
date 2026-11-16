@@ -11,7 +11,6 @@ const members = defineCollection({
 	schema: z.object({
 		name: z.string(),
 		nameEn: z.string(),
-		initials: z.string(),
 		role: z.string(),
 		researchTheme: z.string(),
 		keywords: z.array(z.string()),

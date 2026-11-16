@@ -1,7 +1,6 @@
 ---
 name: "福田 啓太"
 nameEn: "KEITA FUKUDA"
-initials: "K.F"
 role: "修士2年 / MASTER'S STUDENT"
 researchTheme: "深層学習を用いた画像解析による仔牛体重推定システムの開発"
 keywords: ["画像解析", "AI", "仔牛", "体重推定"]
